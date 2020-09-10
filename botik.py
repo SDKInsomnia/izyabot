@@ -35,5 +35,5 @@ async def on_message(message):
     if message.author.premium_since:
         await message.add_reaction('<:booster:750658847634358383>')
 
-token=open("token.txt","r").readline()
-client.run(token)
+token=os.enveron.get('TOKEN')
+client.run(str(token))
