@@ -8,7 +8,7 @@ client=commands.Bot(command_prefix='.')
 @client.event
 async def on_ready():
     print( 'Izya подключен' )
-    await client.change_presence(status = discord.Status.online, activity = Activity(name = 'работу', type = ActivityType.playing))
+    await client.change_presence(status = discord.Status.online, activity = Activity(name = 'за Arizona Squad', type = ActivityType.watching))
 
 @client.command()
 async def hello(ctx):
