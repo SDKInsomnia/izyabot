@@ -35,6 +35,7 @@ async def cc(ctx,amount:int):
 async def on_message(message):
     if message.author.premium_since:
         await message.add_reaction('<:booster:750658847634358383>')
+    await client.process_commands(message)
 
 token=os.environ.get('TOKEN')
 client.run(str(token))
