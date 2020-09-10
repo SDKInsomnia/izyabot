@@ -35,5 +35,5 @@ async def on_message(message):
     if message.author.premium_since:
         await message.add_reaction('<:booster:750658847634358383>')
 
-token=os.enveron.get('TOKEN')
+token=os.environ.get('TOKEN')
 client.run(str(token))
