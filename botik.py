@@ -11,7 +11,7 @@ async def on_ready():
     await client.change_presence(status = discord.Status.online, activity = Activity(name = 'за Arizona Squad', type = ActivityType.watching))
 
 @client.command()
-async def hello(ctx):
+async def help(ctx):
     emb=discord.Embed(title='opisanie',description=f'**Privet, {ctx.author.display_name}**', color=0xf47fff, timestamp=ctx.message.created_at)
     emb.set_footer(text=f'{ctx.author.name}', icon_url=ctx.author.avatar_url)
     emb.set_author(name=f'{ctx.author.name}', icon_url=ctx.author.avatar_url)
