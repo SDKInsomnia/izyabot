@@ -25,13 +25,5 @@ async def clear(ctx,amount:int=None):
 
 @client.command()
 async def help(ctx):
-    emb=discord.Embed(title='Список команд Izya:',description=f'**-clear - очистить чат\n-help - информация о командах**', color=0xf47fff, timestamp=ctx.message.created_at)
-    emb.set_footer(text=f'{ctx.author.name}', icon_url=ctx.author.avatar_url)
-    emb.set_author(name=f'{ctx.author.name}', icon_url=ctx.author.avatar_url)
-    emb.add_field(name='cooper',value="ya123",inline=False)
-    emb.set_image(url=ctx.author.avatar_url)
-    emb.set_thumbnail(url=ctx.author.avatar_url)
+    emb=discord.Embed(title='Список команд бота "Izya":',description=f'**-help - информация о командах.\n-clear - очистить сообщения в чате.**', color=0xf47fff, timestamp=ctx.message.created_at)
     await ctx.send(embed=emb)
-        
-token=os.environ.get('TOKEN')
-client.run(str(token))
