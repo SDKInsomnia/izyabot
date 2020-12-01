@@ -28,5 +28,5 @@ async def help(ctx):
     emb=discord.Embed(title='Список команд бота "Izya":',description=f'**-help - информация о командах.\n-clear - очистить сообщения в чате.**', color=0xf47fff, timestamp=ctx.message.created_at)
     await ctx.send(embed=emb)
 
-token=os.environ.get('TOKEN') 
+token=os.environ.get('TOKEN')
 client.run(str(token))
