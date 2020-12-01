@@ -2,6 +2,7 @@ import discord
 import os
 from discord.ext import commands
 from discord import Activity, ActivityType
+from discord.utils import get
 
 prefix="-"
 
@@ -27,6 +28,29 @@ async def clear(ctx,amount:int=None):
 async def help(ctx):
     emb=discord.Embed(title='Список команд бота "Izya":',description=f'**-help - информация о командах.\n-clear - очистить сообщения в чате.**', color=0xf47fff, timestamp=ctx.message.created_at)
     await ctx.send(embed=emb)
+
+@client.command()
+async def join(ctx):
+    global voice
+    channel = ctx.message.author.voice.channel
+    voice = get(client.voice_clients, guild = ctx.guild)
+
+    if voice and voice.is_connected():
+        await voice.move_to(channel)
+    else:
+        voice = await channel.connect()
+        await ctx.send(f'Izya присоединился к каналу.')
+
+@client.command()
+async def leave(ctx):
+    channel = ctx.message.author.voice.channel
+    voice = get(client.voice_clients, guild = ctx.guild)
+
+    if voice and voice.is_connected():
+        await voice.disconnect()
+    else:
+        voice = await channel.connect()
+        await ctx.send(f'Izya отключился от канала.')
 
 token=os.environ.get('TOKEN')
 client.run(str(token))
