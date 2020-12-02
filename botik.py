@@ -54,7 +54,7 @@ async def leave(ctx):
 
 @client.event
 async def on_member_join(member):
-  role = client.get_role("692309041564745728")
+  role = client.get_role(692309041564745728)
   await member.add_roles(role)
 
 token=os.environ.get('TOKEN')
