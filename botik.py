@@ -12,7 +12,7 @@ client.remove_command('help')
 @client.event
 async def on_ready():
     print("Бот подключен")
-    await client.change_presence(status = discord.Status.online, activity = Activity(name = 'за AS&ERP', type = ActivityType.watching))
+    await client.change_presence(status = discord.Status.online, activity = Activity(name = 'за AS & ERP', type = ActivityType.watching))
 
 @client.command()
 async def clear(ctx,amount:int=None):
