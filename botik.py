@@ -52,5 +52,10 @@ async def leave(ctx):
         voice = await channel.connect()
         await ctx.send(f'Izya отключился от канала.')
 
+@client.event
+async def on_member_join(member):
+  role = client.get_role("692309041564745728")
+  await member.add_roles(role)
+
 token=os.environ.get('TOKEN')
 client.run(str(token))
