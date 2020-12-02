@@ -7,7 +7,7 @@ from discord import Member
 
 prefix="-"
 
-client=commands.Bot(command_prefix=prefix)
+client=commands.Bot(command_prefix=prefix, intents = discord.Intents.all())
 client.remove_command('help')
 
 @client.event
