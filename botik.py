@@ -26,7 +26,7 @@ coll=claster.izyadb.izyacoll
 @client.event
 async def on_ready():
     print("Бот подключен")
-    await client.change_presence(status = discord.Status.online, activity = Activity(name = 'за Arizona Squad', type = ActivityType.watching))
+    await client.change_presence(status = discord.Status.online, activity = Activity(name = 'за AS&ERP', type = ActivityType.watching))
     for guild in client.guilds:
         post={
             '_id': guild.id,
