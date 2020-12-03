@@ -100,7 +100,7 @@ async def unmute(ctx, member:discord.Member):
         mute_role = discord.utils.get(ctx.guild.roles, id = role) 
         await member.add_roles(mute_role)
         emb = discord.Embed(color = 0x479114, timestamp = ctx.message.created_at, description = f"**💻 Модератор _{ctx.author.mention}_ снял блокировку голосового/текстового чата пользователю _{member.mention}_ **")
-        emb.set_author(name = f'{ctx.guild.name} | Unmuted', icon_url = ctx.guild.icon_url)
+        emb.set_author(name = f'{ctx.guild.name} | Unmuted ✅', icon_url = ctx.guild.icon_url)
         emb.set_footer(text = 'Izya Bot ©️ 2020')
         await ctx.send(embed = emb)
         await member.remove_roles(mute_role, reason = f'Unmuted by {ctx.message.author.display_name}')
