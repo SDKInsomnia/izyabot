@@ -119,7 +119,7 @@ async def clear(ctx,amount:int=None):
 
 @client.command()
 async def help(ctx):
-    emb=discord.Embed(title='Список команд бота "Izya":',description=f'**-help - информация о командах.\n-clear - очистить сообщения в чате.**', color=0xf47fff, timestamp=ctx.message.created_at)
+    emb=discord.Embed(title='Список команд бота "Izya":',description=f'**-help - информация о командах.\n-clear - очистить сообщения в чате.\n-mute - блокировка текстового/голосового чата. (-mute @упоминание время причина)**', color=0xf47fff, timestamp=ctx.message.created_at)
     await ctx.send(embed=emb)
     
 token=os.environ.get('TOKEN')
